@@ -23,11 +23,6 @@
     <div class="wrap">
       <div class="brand">
         <a class="wordmark" href="index.html">P &amp; S Orange<span>Pty Ltd · Toowoomba</span></a>
-        <div class="theme" role="group" aria-label="Colour theme">
-          <button type="button" data-theme-btn="system" aria-pressed="true">System</button>
-          <button type="button" data-theme-btn="light" aria-pressed="false">Light</button>
-          <button type="button" data-theme-btn="dark" aria-pressed="false">Dark</button>
-        </div>
       </div>
       <nav class="primary" aria-label="Main">
         <a href="work.html" aria-current="page">Work</a>
@@ -36,6 +31,10 @@
         <a href="quote.html#book">Book</a>
         <a href="contact.html">Contact</a>
         <a class="btn btn-black" href="tel:+61419722446">Call 0419 722 446</a>
+        <button type="button" class="theme-toggle" aria-label="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -82,30 +81,12 @@
                 </picture>
               </span>
             </a>
-            <a href="images/kitchen-white-1440.webp" data-lb data-full="images/kitchen-white-1440.webp" data-alt="White kitchen with a stone island">
-              <span class="tint">
-                <picture>
-                  <source type="image/avif" srcset="images/kitchen-white-800.avif 800w, images/kitchen-white-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 560px">
-                  <source type="image/webp" srcset="images/kitchen-white-800.webp 800w, images/kitchen-white-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 560px">
-                  <img src="images/kitchen-white-800.webp" width="800" height="600" alt="White kitchen with a stone island" loading="lazy" decoding="async">
-                </picture>
-              </span>
-            </a>
             <a href="images/kitchen-galley-1440.webp" data-lb data-full="images/kitchen-galley-1440.webp" data-alt="Galley kitchen with stone benches">
               <span class="tint">
                 <picture>
                   <source type="image/avif" srcset="images/kitchen-galley-800.avif 800w, images/kitchen-galley-1440.avif 1440w" sizes="(max-width: 900px) 50vw, 280px">
                   <source type="image/webp" srcset="images/kitchen-galley-800.webp 800w, images/kitchen-galley-1440.webp 1440w" sizes="(max-width: 900px) 50vw, 280px">
                   <img src="images/kitchen-galley-800.webp" width="800" height="534" alt="Galley kitchen with stone benches" loading="lazy" decoding="async">
-                </picture>
-              </span>
-            </a>
-            <a href="images/kitchen-strip-after-1440.webp" data-lb data-full="images/kitchen-strip-after-1440.webp" data-alt="Finished kitchen with a black stone island">
-              <span class="tint">
-                <picture>
-                  <source type="image/avif" srcset="images/kitchen-strip-after-800.avif 800w, images/kitchen-strip-after-1440.avif 1440w" sizes="(max-width: 900px) 50vw, 280px">
-                  <source type="image/webp" srcset="images/kitchen-strip-after-800.webp 800w, images/kitchen-strip-after-1440.webp 1440w" sizes="(max-width: 900px) 50vw, 280px">
-                  <img src="images/kitchen-strip-after-800.webp" width="800" height="600" alt="Finished kitchen with a black stone island" loading="lazy" decoding="async">
                 </picture>
               </span>
             </a>
@@ -131,15 +112,6 @@
                   <source type="image/avif" srcset="images/bath-freestanding-2-800.avif 800w, images/bath-freestanding-2-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 560px">
                   <source type="image/webp" srcset="images/bath-freestanding-2-800.webp 800w, images/bath-freestanding-2-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 560px">
                   <img src="images/bath-freestanding-2-800.webp" width="800" height="600" alt="Bathroom with twin basins and a freestanding bath" loading="lazy" decoding="async">
-                </picture>
-              </span>
-            </a>
-            <a href="images/bath-shower-1440.webp" data-lb data-full="images/bath-shower-1440.webp" data-alt="Shower with a rain head and tiled niche">
-              <span class="tint">
-                <picture>
-                  <source type="image/avif" srcset="images/bath-shower-800.avif 800w, images/bath-shower-1440.avif 1440w" sizes="(max-width: 900px) 50vw, 280px">
-                  <source type="image/webp" srcset="images/bath-shower-800.webp 800w, images/bath-shower-1440.webp 1440w" sizes="(max-width: 900px) 50vw, 280px">
-                  <img src="images/bath-shower-800.webp" width="800" height="1066" alt="Shower with a rain head and tiled niche" loading="lazy" decoding="async">
                 </picture>
               </span>
             </a>
@@ -195,15 +167,6 @@
                 </picture>
               </span>
             </a>
-            <a href="images/robe-1440.webp" data-lb data-full="images/robe-1440.webp" data-alt="Built-in robes">
-              <span class="tint">
-                <picture>
-                  <source type="image/avif" srcset="images/robe-800.avif 800w, images/robe-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 560px">
-                  <source type="image/webp" srcset="images/robe-800.webp 800w, images/robe-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 560px">
-                  <img src="images/robe-800.webp" width="800" height="1066" alt="Built-in robes" loading="lazy" decoding="async">
-                </picture>
-              </span>
-            </a>
             <a href="images/hall-1440.webp" data-lb data-full="images/hall-1440.webp" data-alt="Entry hall with a brick feature wall">
               <span class="tint">
                 <picture>
@@ -219,26 +182,7 @@
         <article class="work-block reveal" id="new-builds">
           <h2>New builds</h2>
           <p class="help">The great Australian dream is to build your own home. Servicing Toowoomba and the surrounding areas, our skilled and experienced carpenters can build your new home from the ground up or professionally renovate your existing property.</p>
-          <div class="bento">
-            <a href="images/house-hero-1440.webp" data-lb data-full="images/house-hero-1440.webp" data-alt="Finished brick home with a grey roof">
-              <span class="tint">
-                <picture>
-                  <source type="image/avif" srcset="images/house-hero-800.avif 800w, images/house-hero-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 560px">
-                  <source type="image/webp" srcset="images/house-hero-800.webp 800w, images/house-hero-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 560px">
-                  <img src="images/house-hero-800.webp" width="800" height="452" alt="Finished brick home with a grey roof" loading="lazy" decoding="async">
-                </picture>
-              </span>
-            </a>
-            <a href="images/house-entry-1440.webp" data-lb data-full="images/house-entry-1440.webp" data-alt="Lit entry of a new brick home">
-              <span class="tint">
-                <picture>
-                  <source type="image/avif" srcset="images/house-entry-800.avif 800w, images/house-entry-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 560px">
-                  <source type="image/webp" srcset="images/house-entry-800.webp 800w, images/house-entry-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 560px">
-                  <img src="images/house-entry-800.webp" width="800" height="534" alt="Lit entry of a new brick home" loading="lazy" decoding="async">
-                </picture>
-              </span>
-            </a>
-          </div>
+          <div class="photo-slot" role="img" aria-label="Your photo here">Your photo here</div>
         </article>
 
         <p class="facts">Our carpentry team consists of skilled tradesmen and apprentices. All other trades are supplied by licensed contractors with many years of experience — plumbers, electricians, tilers, plasterers and water-proofers.</p>

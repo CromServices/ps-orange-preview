@@ -24,11 +24,6 @@
     <div class="wrap">
       <div class="brand">
         <a class="wordmark" href="index.html">P &amp; S Orange<span>Pty Ltd · Toowoomba</span></a>
-        <div class="theme" role="group" aria-label="Colour theme">
-          <button type="button" data-theme-btn="system" aria-pressed="true">System</button>
-          <button type="button" data-theme-btn="light" aria-pressed="false">Light</button>
-          <button type="button" data-theme-btn="dark" aria-pressed="false">Dark</button>
-        </div>
       </div>
       <nav class="primary" aria-label="Main">
         <a href="work.html">Work</a>
@@ -37,6 +32,10 @@
         <a href="#book">Book</a>
         <a href="contact.html">Contact</a>
         <a class="btn btn-black" href="tel:+61419722446">Call 0419 722 446</a>
+        <button type="button" class="theme-toggle" aria-label="Switch colour theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -69,32 +68,38 @@
         <a class="svc reveal" href="work.html#kitchen">
           <span class="tint">
             <picture>
-              <source type="image/avif" srcset="images/kitchen-galley-800.avif 800w, images/kitchen-galley-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 280px">
-              <source type="image/webp" srcset="images/kitchen-galley-800.webp 800w, images/kitchen-galley-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 280px">
-              <img src="images/kitchen-galley-800.webp" width="800" height="534" alt="A finished kitchen with stone benches" loading="lazy" decoding="async">
+              <source type="image/avif" srcset="images/kitchen-white-800.avif 800w, images/kitchen-white-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 280px">
+              <source type="image/webp" srcset="images/kitchen-white-800.webp 800w, images/kitchen-white-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 280px">
+              <img src="images/kitchen-white-800.webp" width="800" height="600" alt="A white kitchen with a stone island" loading="lazy" decoding="async">
             </picture>
           </span>
-          <span class="num">01</span><h3>Kitchen renovations</h3>
+          <span class="num">01</span>
+          <h3>Kitchen renovations</h3>
+          <p>Kitchens and all carpentry work, from a new layout to the heart of the home.</p>
         </a>
         <a class="svc reveal" href="work.html#bathroom">
           <span class="tint">
             <picture>
-              <source type="image/avif" srcset="images/bath-freestanding-800.avif 800w, images/bath-freestanding-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 280px">
-              <source type="image/webp" srcset="images/bath-freestanding-800.webp 800w, images/bath-freestanding-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 280px">
-              <img src="images/bath-freestanding-800.webp" width="800" height="544" alt="A bathroom with a freestanding bath" loading="lazy" decoding="async">
+              <source type="image/avif" srcset="images/bath-shower-800.avif 800w, images/bath-shower-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 280px">
+              <source type="image/webp" srcset="images/bath-shower-800.webp 800w, images/bath-shower-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 280px">
+              <img src="images/bath-shower-800.webp" width="800" height="1066" alt="A shower with a rain head and tiled niche" loading="lazy" decoding="async">
             </picture>
           </span>
-          <span class="num">02</span><h3>Bathroom renovations</h3>
+          <span class="num">02</span>
+          <h3>Bathroom renovations</h3>
+          <p>From classic looks to contemporary styles, even in a modest sized bathroom.</p>
         </a>
         <a class="svc reveal" href="work.html#home">
           <span class="tint">
             <picture>
-              <source type="image/avif" srcset="images/living-800.avif 800w, images/living-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 280px">
-              <source type="image/webp" srcset="images/living-800.webp 800w, images/living-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 280px">
-              <img src="images/living-800.webp" width="800" height="534" alt="A living room with a brick feature wall" loading="lazy" decoding="async">
+              <source type="image/avif" srcset="images/robe-800.avif 800w, images/robe-1440.avif 1440w" sizes="(max-width: 900px) 100vw, 280px">
+              <source type="image/webp" srcset="images/robe-800.webp 800w, images/robe-1440.webp 1440w" sizes="(max-width: 900px) 100vw, 280px">
+              <img src="images/robe-800.webp" width="800" height="1066" alt="Built-in robes" loading="lazy" decoding="async">
             </picture>
           </span>
-          <span class="num">03</span><h3>Home renovations</h3>
+          <span class="num">03</span>
+          <h3>Home renovations</h3>
+          <p>External and internal work, including bathrooms, built-in robes, kitchens and carpentry.</p>
         </a>
         <a class="svc reveal" href="work.html#new-builds">
           <span class="tint">
@@ -104,7 +109,9 @@
               <img src="images/house-entry-800.webp" width="800" height="534" alt="The entry of a new brick home" loading="lazy" decoding="async">
             </picture>
           </span>
-          <span class="num">04</span><h3>New builds</h3>
+          <span class="num">04</span>
+          <h3>New builds</h3>
+          <p>Build a new home from the ground up, or renovate an existing property in Toowoomba.</p>
         </a>
       </div>
     </div>
@@ -181,19 +188,38 @@
         </ol>
       </div>
       <div>
-        <form class="js-form" id="book-form">
-          <label>Name<input type="text" name="b-name" autocomplete="name" required></label>
-          <label>Phone<input type="tel" name="b-phone" autocomplete="tel" required></label>
-          <label>Preferred day<input type="text" name="b-day" required></label>
-          <label>Time window
-            <select name="b-window">
-              <option>Morning</option>
-              <option>Afternoon</option>
-              <option>Either</option>
-            </select>
-          </label>
-          <label class="full">Anything we should know<textarea name="b-notes"></textarea></label>
-          <button class="btn btn-black submit" type="submit">Book a visit</button>
+        <form class="js-book book-widget" id="book-form" novalidate>
+          <fieldset class="book-set">
+            <legend>Preferred day</legend>
+            <div class="chip-row" data-dates role="radiogroup" aria-label="Preferred day"></div>
+            <p class="field-err" data-err="date" role="alert">Choose a weekday.</p>
+          </fieldset>
+          <fieldset class="book-set">
+            <legend>Time window</legend>
+            <div class="chip-row wrap" role="radiogroup" aria-label="Time window">
+              <label class="chip"><input type="radio" name="b-window" value="Morning"><span>Morning</span></label>
+              <label class="chip"><input type="radio" name="b-window" value="Midday"><span>Midday</span></label>
+              <label class="chip"><input type="radio" name="b-window" value="Afternoon"><span>Afternoon</span></label>
+            </div>
+            <p class="field-err" data-err="time" role="alert">Choose a time window.</p>
+          </fieldset>
+          <fieldset class="book-set">
+            <legend>Job type</legend>
+            <div class="chip-row wrap" role="radiogroup" aria-label="Job type">
+              <label class="chip"><input type="radio" name="b-job" value="Kitchen renovations"><span>Kitchen renovations</span></label>
+              <label class="chip"><input type="radio" name="b-job" value="Bathroom renovations"><span>Bathroom renovations</span></label>
+              <label class="chip"><input type="radio" name="b-job" value="Home renovations"><span>Home renovations</span></label>
+              <label class="chip"><input type="radio" name="b-job" value="New builds"><span>New builds</span></label>
+              <label class="chip"><input type="radio" name="b-job" value="Carpentry"><span>Carpentry</span></label>
+              <label class="chip"><input type="radio" name="b-job" value="Built-in robes"><span>Built-in robes</span></label>
+            </div>
+          </fieldset>
+          <label>Name<input type="text" name="b-name" id="b-name" autocomplete="name"></label>
+          <label>Phone<input type="tel" name="b-phone" id="b-phone" autocomplete="tel" inputmode="tel" aria-describedby="book-phone-err"></label>
+          <p class="field-err" data-err="phone" id="book-phone-err" role="alert">Enter a phone number.</p>
+          <label>Notes<textarea name="b-notes" id="b-notes"></textarea></label>
+          <p class="book-summary" data-summary aria-live="polite">Choose a day and a time window</p>
+          <button class="btn btn-orange submit" type="submit">Book a visit</button>
         </form>
         <div class="thanks" hidden>
           <h3>Thank you</h3>
