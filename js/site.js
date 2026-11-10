@@ -199,25 +199,49 @@
     lb.className = "lb";
     lb.setAttribute("role", "dialog");
     lb.setAttribute("aria-modal", "true");
-    lb.setAttribute("aria-label", "Photograph");
-    lb.innerHTML = '<button type="button" class="lb-close" aria-label="Close photograph">Close</button>' +
-      '<button type="button" class="lb-prev" aria-label="Previous photograph">Previous</button>' +
+    lb.setAttribute("aria-labelledby", "lb-caption");
+    lb.innerHTML = '<button type="button" class="lb-close" aria-label="Close">×</button>' +
+      '<button type="button" class="lb-prev" aria-label="Previous photograph">‹</button>' +
       '<img alt="">' +
-      '<button type="button" class="lb-next" aria-label="Next photograph">Next</button>';
+      '<button type="button" class="lb-next" aria-label="Next photograph">›</button>' +
+      '<p class="lb-meta"><span class="lb-caption" id="lb-caption"></span><span class="lb-count"></span></p>';
     document.body.appendChild(lb);
     var img = lb.querySelector("img");
+    var cap = lb.querySelector(".lb-caption");
+    var count = lb.querySelector(".lb-count");
+    var closeBtn = lb.querySelector(".lb-close");
+    var prevBtn = lb.querySelector(".lb-prev");
+    var nextBtn = lb.querySelector(".lb-next");
     var idx = 0;
+    var lastFocus = null;
+    var touchX = 0;
+    var touchY = 0;
 
-    function openAt(i) {
+    function traps() { return [closeBtn, prevBtn, nextBtn]; }
+
+    function show(i) {
       idx = (i + items.length) % items.length;
       var a = items[idx];
-      img.src = a.getAttribute("data-full") || a.getAttribute("href");
-      img.alt = a.getAttribute("data-alt") || "";
+      var full = a.getAttribute("data-full") || a.getAttribute("href");
+      var alt = a.getAttribute("data-alt") || "";
+      img.src = full;
+      img.alt = alt;
+      cap.textContent = alt;
+      count.textContent = (idx + 1) + " / " + items.length;
+    }
+
+    function openAt(i) {
+      lastFocus = document.activeElement;
+      show(i);
       lb.classList.add("open");
+      document.body.classList.add("lb-lock");
+      closeBtn.focus();
     }
     function close() {
       lb.classList.remove("open");
+      document.body.classList.remove("lb-lock");
       img.removeAttribute("src");
+      if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
     }
 
     for (var i = 0; i < items.length; i++) {
@@ -228,15 +252,44 @@
         });
       })(i);
     }
-    lb.querySelector(".lb-close").addEventListener("click", close);
-    lb.querySelector(".lb-prev").addEventListener("click", function () { openAt(idx - 1); });
-    lb.querySelector(".lb-next").addEventListener("click", function () { openAt(idx + 1); });
+    closeBtn.addEventListener("click", function (e) { e.stopPropagation(); close(); });
+    prevBtn.addEventListener("click", function (e) { e.stopPropagation(); show(idx - 1); });
+    nextBtn.addEventListener("click", function (e) { e.stopPropagation(); show(idx + 1); });
     lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
     document.addEventListener("keydown", function (e) {
       if (!lb.classList.contains("open")) return;
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowLeft") openAt(idx - 1);
-      if (e.key === "ArrowRight") openAt(idx + 1);
+      if (e.key === "Escape") { e.preventDefault(); close(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); show(idx - 1); }
+      if (e.key === "ArrowRight") { e.preventDefault(); show(idx + 1); }
+      if (e.key === "Tab") {
+        var list = traps();
+        var first = list[0];
+        var last = list[list.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     });
+    lb.addEventListener("touchstart", function (e) {
+      if (!e.changedTouches || !e.changedTouches[0]) return;
+      touchX = e.changedTouches[0].clientX;
+      touchY = e.changedTouches[0].clientY;
+    }, { passive: true });
+    lb.addEventListener("touchend", function (e) {
+      if (!e.changedTouches || !e.changedTouches[0]) return;
+      var dx = e.changedTouches[0].clientX - touchX;
+      var dy = e.changedTouches[0].clientY - touchY;
+      if (Math.abs(dx) < 40 && Math.abs(dy) < 40) return;
+      if (Math.abs(dx) > Math.abs(dy)) {
+        if (dx < 0) show(idx + 1);
+        else show(idx - 1);
+      } else if (dy > 0) {
+        close();
+      }
+    }, { passive: true });
   }
 })();
