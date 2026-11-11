@@ -61,15 +61,16 @@
           <label>Phone<input type="tel" name="phone" autocomplete="tel" required></label>
           <label>Email<input type="email" name="email" autocomplete="email" required></label>
           <label>Suburb or address<input type="text" name="suburb" required></label>
-          <label class="full">Type of work
-            <select name="type">
-              <option>Kitchen renovation</option>
-              <option>Bathroom renovation</option>
-              <option>Home renovation</option>
-              <option>New build</option>
-              <option>Other</option>
-            </select>
-          </label>
+          <fieldset class="book-set full">
+            <legend>Type of work</legend>
+            <div class="chip-row wrap" role="radiogroup" aria-label="Type of work">
+              <label class="chip"><input type="radio" name="type" value="Kitchen renovation" required><span>Kitchen renovation</span></label>
+              <label class="chip"><input type="radio" name="type" value="Bathroom renovation"><span>Bathroom renovation</span></label>
+              <label class="chip"><input type="radio" name="type" value="Home renovation"><span>Home renovation</span></label>
+              <label class="chip"><input type="radio" name="type" value="New build"><span>New build</span></label>
+              <label class="chip"><input type="radio" name="type" value="Other"><span>Other</span></label>
+            </div>
+          </fieldset>
           <label class="full">A short description<textarea name="details" required></textarea></label>
           <label class="full">Preferred time to talk<input type="text" name="when"></label>
           <button class="btn btn-orange submit" type="submit">Request a quote</button>

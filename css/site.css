@@ -310,8 +310,8 @@ form {
 }
 form[hidden], .thanks[hidden] { display: none !important; }
 form label { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 700; color: var(--heading); }
-form label.full { grid-column: 1 / -1; }
-form input, form select, form textarea {
+form label.full, form .full { grid-column: 1 / -1; }
+form input, form textarea {
   font: inherit; font-weight: 400; color: var(--ink);
   border: 1px solid var(--line); background: var(--input-bg); min-height: 44px; padding: 8px 12px; border-radius: 4px;
 }
@@ -512,7 +512,7 @@ footer.site strong, footer.site a { color: #fff; }
   .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: 110px; }
   .bento a:nth-child(1), .bento a:nth-child(2), .bento a:nth-child(5) { grid-column: span 2; grid-row: span 2; }
   form { grid-template-columns: 1fr; padding: 18px; }
-  form label.full, form .submit { grid-column: auto; }
+  form label.full, form .full, form .submit { grid-column: auto; }
   form .submit { width: 100%; }
   .about, .quote, .book, .contact, .reviews, .page-body { padding-top: 48px; padding-bottom: 48px; }
   .sticky-call { display: flex; }
